@@ -6,7 +6,7 @@
 	//Função para calcular o imc
 	function calcularIMC(){
 		if(peso > 0 && altura > 0){
-			imc = (peso / Mat.pow(altura,2)).toFixed(2);
+			imc = (peso / Math.pow(altura,2)).toFixed(2);
 		}
 		else {
 			imc = 0;
@@ -23,8 +23,8 @@
 		Altura (m): <input type="number" bind:value={altura} on:input={calcularIMC}>
 	</label>
 	{#if imc > 0}
-	<p>Seu IMC é {imc}</p>
-	{/if}
+    <p>Seu IMC é {imc}</p>
+  {/if}
 </main>
 
 <style>
