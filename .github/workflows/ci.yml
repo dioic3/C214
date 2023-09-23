@@ -7,7 +7,7 @@ name: CI
 on:
   push:
     paths: 
-    - 'trabalho/**'
+    - './C214/trabalho/**'
     branches: [ master ]
   pull_request:
     branches: [ master ]
