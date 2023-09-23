@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [ master ]
 
-    paths:
-      - 'trabalho/**'
-
 jobs:
   build-teste:
     runs-on: ubuntu-latest
@@ -19,6 +16,7 @@ jobs:
 
     - name: Use Node ${{ matrix.node-version }}
       uses: actions/setup-node@v1
+      working-directory: ./trabalho
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
