@@ -6,11 +6,12 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    paths: 
-    - './C214/trabalho/**'
     branches: [ master ]
   pull_request:
     branches: [ master ]
+
+      paths: 
+        - './C214/trabalho/**'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
