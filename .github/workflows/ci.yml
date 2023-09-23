@@ -13,9 +13,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
-      working-directory: ./trabalho
+      directory: ./trabalho
 
-      
+
     - name: Use Node ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
