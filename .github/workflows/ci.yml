@@ -13,10 +13,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
+      working-directory: ./trabalho
 
+      
     - name: Use Node ${{ matrix.node-version }}
       uses: actions/setup-node@v1
-      working-directory: ./trabalho
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
