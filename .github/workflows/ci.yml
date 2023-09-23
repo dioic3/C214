@@ -5,8 +5,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+
     paths:
-      - 'C214/trabalho/**'
+      - 'trabalho/**'
 
 jobs:
   build-teste:
