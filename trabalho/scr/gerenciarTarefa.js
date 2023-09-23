@@ -12,13 +12,13 @@ class GerenciarTarefa {
         if(TarefaName){
             if (status === "A fazer" || status === "Em andamento" || status === "Concluída") {
                 TarefaName.updateStatus(status);
-                console.log(`Tarefa com o status "${status}" atualizado.`)
+                return `Tarefa com o status ${status} atualizado.`;
             } else {
-                console.log("Entrada inválida. Entre somente com as mensagens 'A fazer', 'Em andamento' e 'Concluída'.")
+                return "Entrada inválida. Entre somente com as mensagens 'A fazer', 'Em andamento' e 'Concluída'."
             }
         }
         else {
-            console.log(`Tarefa "${titulo}" não encontrada`)
+            return `Tarefa ${titulo} não encontrada`;
         }
     }
 
@@ -27,21 +27,24 @@ class GerenciarTarefa {
         if (status == "A fazer" || status == "Em andamento" || status == "Concluída") {
             const TarefaNova = new Tarefa(nome, descrição, status);
             this.gerenciarTarefa.push(TarefaNova);
-            console.log("As informações foram armazenadas.")
-            console.log(`Tarefa com o status "${status}" atualizado.`)
+            return "As informações foram armazenadas.";
         } else {
-            console.log("Entrada inválida. Entre somente com as mensagens 'A fazer', 'Em andamento' e 'Concluída'.")
+            return "Entrada inválida. Entre somente com as mensagens 'A fazer', 'Em andamento' e 'Concluída'."
         }
+    }
+
+    tamanhodaLista(){
+        return this.gerenciarTarefa.length;
     }
 
     // função para visualizar uma nova tarefa
     visualizarTarefas() {
         const index = this.gerenciarTarefa.length;
-        if(index != 0){
-            console.log(this.gerenciarTarefa);
+        if(index !== 0){
+            return this.gerenciarTarefa;
         }
         else {
-            console.log("Infelizmente você não entrou com informação nenhuma. Por favor, adicione uma tarefa nova e depois peça para visualizar a lista.")
+            return "Infelizmente você não entrou com informação nenhuma. Por favor, adicione uma tarefa nova e depois peça para visualizar a lista.";
         }
     }
 
@@ -50,10 +53,10 @@ class GerenciarTarefa {
         const indiceTarefa = this.gerenciarTarefa.findIndex((TarefaObj) => TarefaObj.returnName() === nome);
         if (indiceTarefa !== -1) {
             this.gerenciarTarefa.splice(indiceTarefa, 1); // Remove a tarefa da lista
-            console.log(`A Tarefa "${nome}" foi removida com sucesso.`);
+            return `A tarefa ${nome} foi removida com sucesso.`;
         } 
         else {
-            console.log(`A Tarefa "${nome}" não foi encontrada na lista.`);
+            return `A tarefa ${nome} não foi encontrada na lista.`;
         }
     }
 

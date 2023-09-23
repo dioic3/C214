@@ -20,7 +20,8 @@ function Menu () {
                 entry.question('Entre com o titulo:', (nome) => {
                     entry.question('Entre com a descrição:', (descrição) => {
                         entry.question('Entre com o status da tarefa:',(status) => {
-                            gerenciador.adicionarTarefa(nome,descrição,status);
+                            const tarefa = gerenciador.adicionarTarefa(nome,descrição,status);
+                            console.log(tarefa)
                             Menu()
                         })
                     })
@@ -28,20 +29,23 @@ function Menu () {
                 break;
             case 2:
                 console.log("Lista de tarefas seria:")
-                gerenciador.visualizarTarefas();
+                const lista = gerenciador.visualizarTarefas();
+                console.log(lista)
                 Menu();
                 break;
             case 3:
                 entry.question('Entre com o titulo da tarefa para atualizar o status:', (nome) => {
                     entry.question('Entre com o status para trocar:',(status) => {
-                        gerenciador.atualizarTarefa(nome,status);
+                        const tarefa = gerenciador.atualizarTarefa(nome,status);
+                        console.log(tarefa)
                         Menu()
                     })
                 })
                 break;
             case 4:
                 entry.question('Entre com o titulo da tarefa para deletar:',(nome) => {
-                    gerenciador.deletarTarefa(nome);
+                   const tarefa = gerenciador.deletarTarefa(nome);
+                   console.log(tarefa)
                     Menu()
                 })
                 break;
