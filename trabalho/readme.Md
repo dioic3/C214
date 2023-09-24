@@ -26,17 +26,48 @@ cd trabalho
 npm install --no-save
 ```
 
-O motivo para usar o npm install --no-save seria para não atualizar as dependências do package.json e package-lock.json.
+O motivo para usar o **npm install --no-save** seria para não atualizar as dependências do **package.json** e **package-lock.json**.
 
 Instalando as dependências do node dentro da pasta trabalho, é hora de executar os códigos da pasta **scr**. Então acesse a pasta **scr** com o comando:
 
 ```
 cd scr
 ```
+Dentro da pasta, existem os arquivos **gerenciarTarefa.js**, **main.js** e **tarefa.js**.
 
+- Foto do main.js:
+![Arquivo-main.js](/trabalho/img/Screenshot_1.jpg)
 
-# explicar sobre o que é a pasta scr e os seus códigos
-# explicar porque não pode upar o node_modules
-# como inicializar o projeto para somente executar o código do scr e mostrar a extensão usada para isso 
-# explicar sobre a pasta test e quais foram os casos de teste
-# explicar como rodar um teste
+- Foto do tarefa.js:
+![Arquivo-tarefa.js](/trabalho/img/Screenshot_2.jpg)
+
+- Foto do gerenciarTarefa.js:
+![Arquivo-gerenciarTarefa.js](/trabalho/img/Screenshot_3.jpg)
+
+Para executar o código, é importante executar o arquivo main. No terminal, execute o comando:
+
+```
+node main.js
+```
+
+Depois verifique o menu sendo execute e escolha as opções desejadas.
+
+## Como executar os códigos de teste?
+
+Para executar os códigos de teste no terminal, é necessário sair da pasta **scr** e entrar na pasta **test**. Execute os seguintes comandos no terminal:
+
+```
+cd ..
+cd test
+```
+
+Depois que entrou na pasta **test**, basta executar o comando para rodar os testes e veja a mágica acontecer:
+
+```
+npm test
+```
+Além disso, na aba de Actions do github foi feito o uso do conceito de integração continua para que toda vez algum commit for feito ou pull request for aberta, os testes unitários seram executados.
+
+## Membros da equipe
+
+- Nome: Joyce da Costa Dias
